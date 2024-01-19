@@ -12,6 +12,11 @@
 #include "soc/spi_reg.h"
 #include "driver/spi_master.h"
 
+#if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
+#include "hal/gpio_ll.h"
+#include "soc/gpio_struct.h"
+#endif
+
 // Processor specific code used by SPI bus transaction startWrite and endWrite functions
 #define SET_BUS_WRITE_MODE // Not used
 #define SET_BUS_READ_MODE  // Not used
